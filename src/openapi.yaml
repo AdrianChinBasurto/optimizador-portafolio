@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Microservicio de Optimización de Portafolio
+  version: 1.0.0
+paths:
+  /optimizar:
+    post:
+      summary: Optimiza la selección de proyectos bajo una capacidad
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                capacidad:
+                  type: integer
+                  example: 10000
+                objetos:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nombre: { type: string }
+                      peso: { type: integer }
+                      ganancia: { type: integer }
+      responses:
+        '200':
+          description: Resultado óptimo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  seleccionados:
+                    type: array
+                    items: { type: string }
+                  ganancia_total: { type: integer }
+                  peso_total: { type: integer }

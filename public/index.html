@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Optimización de Portafolio</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Optimización de Portafolio</h1>
+
+    <section class="card">
+      <h2>Entrada</h2>
+      <label>Capacidad (presupuesto):
+        <input id="capacidad" type="number" min="0" value="10000" />
+      </label>
+
+      <div class="list-header">
+        <span>Proyecto</span><span>Costo</span><span>Ganancia</span><span>Acción</span>
+      </div>
+      <div id="items"></div>
+
+      <div class="actions">
+        <button id="btnAdd">Agregar proyecto</button>
+        <button id="btnClear">Limpiar</button>
+        <button id="btnCalc">Calcular</button>
+      </div>
+    </section>
+
+    <section class="card" id="resultado" hidden>
+      <h2>Resultados</h2>
+      <table>
+        <tbody>
+          <tr><th>Seleccionados</th><td id="sel"></td></tr>
+          <tr><th>Ganancia total</th><td id="gan"></td></tr>
+          <tr><th>Peso total</th><td id="pes"></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
